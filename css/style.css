@@ -1,71 +1,410 @@
 :root {
-  --primary-color: #2c3e50;
-  --secondary-color: #95a5a6;
+  --primary: #2c3e50;
+  --secondary: #6c757d;
+  --accent: #3498db;
+  --bg: #f8f9fa;
+  --error: #dc3545;
 }
 
+/* 基础样式 */
 body {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  line-height: 1.6;
+  font-family: 'Microsoft YaHei', sans-serif;
+  line-height: 1.8;
+  background: var(--bg);
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
 }
 
-/* 作者信息 */
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* 作者信息区 */
+.author-header {
+  max-width: 800px;
+  margin: 3rem auto 2rem;
+}
+
+.author-card {
+  display: flex;
+  gap: 2rem;
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  position: relative;
+}
+
+.author-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  flex-shrink: 0;
+}
+
 .author-info {
+  flex: 1;
+}
+
+.author-info h1 {
+  margin: 0 0 0.5rem;
+  color: var(--primary);
+  font-size: 1.8rem;
+}
+
+/* 动态文案区 */
+.random-quote {
+  margin-top: 1rem;
+  position: relative;
+}
+
+#dynamic-quote {
+  min-height: 60px;
+  padding: 1.2rem;
+  background: var(--bg);
+  border-radius: 8px;
+  border: 1px solid #eee;
+  color: var(--secondary);
+  position: relative;
+}
+
+.loading-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 1rem;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: bounce 1.4s infinite;
+}
+
+@keyframes bounce {
+  0%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+}
+
+.refresh-btn {
+  position: absolute;
+  right: -15px;
+  bottom: -15px;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  background: white;
+  color: var(--accent);
+  cursor: pointer;
+  transition: all 0.3s ease;
   display: flex;
   align-items: center;
-  margin-bottom: 3rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid #eee;
+  justify-content: center;
 }
 
-.avatar {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  margin-right: 2rem;
-  object-fit: cover;
+.refresh-btn:hover {
+  background: var(--accent);
+  color: white;
+  transform: rotate(360deg);
 }
 
-.author-details h1 {
-  margin: 0 0 0.5rem;
-  color: var(--primary-color);
+/* 错误提示 */
+.error-message {
+  padding: 1rem;
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 6px;
+  color: #721c24;
 }
 
-.author-details p {
-  margin: 0;
-  color: var(--secondary-color);
+.error-message i {
+  margin-right: 0.5rem;
 }
 
 /* 文章列表 */
-.post-item {
-  margin-bottom: 2rem;
-  padding: 1.5rem;
-  background: #f9f9f9;
-  border-radius: 8px;
+.post-container {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.post-item h2 {
+.post-card {
+  background: white;
+  padding: 1.8rem;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-3px);
+}
+
+.post-title {
   margin: 0 0 0.5rem;
   font-size: 1.4rem;
 }
 
-.post-item h2 a {
-  color: var(--primary-color);
-  text-decoration: none;
-}
-
-.post-item h2 a:hover {
-  text-decoration: underline;
-}
-
 .post-meta {
-  color: var(--secondary-color);
+  color: var(--secondary);
   font-size: 0.9rem;
   margin-bottom: 1rem;
 }
 
 .post-excerpt {
-  color: #666;
+  color: var(--secondary);
+  line-height: 1.6;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .author-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .author-avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  .refresh-btn {
+    position: static;
+    margin: 1rem auto 0;
+  }
+
+  body {
+    padding: 15px;
+  }
+
+  .post-card {
+    padding: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+
+  .author-card {
+    padding: 1rem;
+  }
+
+  #dynamic-quote {
+    padding: 1rem;
+  }
+}
+/* 文章页专用样式 */
+.post-nav {
+  max-width: 800px;
+  margin: 1rem auto;
+  padding: 0 2rem;
+}
+
+.home-link {
+  color: #6c757d;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.home-link:hover {
+  color: #3498db;
+  transform: translateX(-5px);
+}
+
+.post-main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.post-article {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  padding: 3rem 2.5rem;
+}
+
+.post-header {
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.post-title {
+  font-size: 2.2rem;
+  color: #2c3e50;
+  margin: 0 0 1.5rem;
+  line-height: 1.3;
+}
+
+.post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  color: #6c757d;
+  font-size: 0.95rem;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.meta-item i {
+  color: #3498db;
+  width: 1.2rem;
+  text-align: center;
+}
+
+.tags {
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  background: #f8f9fa;
+  color: #6c757d;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.tag:hover {
+  background: #3498db;
+  color: white;
+  text-decoration: none;
+}
+
+/* 正文内容样式 */
+.post-content {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #4a5568;
+}
+
+.post-content p {
+  margin: 1.5em 0;
+}
+
+.post-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.post-content blockquote {
+  border-left: 4px solid #3498db;
+  margin: 1.5rem 0;
+  padding: 1rem 1.5rem;
+  background: #f8f9fa;
+  color: #6c757d;
+  border-radius: 0 8px 8px 0;
+}
+
+.post-content pre {
+  background: #2c3e50;
+  color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+.post-content code {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9em;
+}
+
+/* 底部导航 */
+.post-footer {
+  border-top: 1px solid #f0f0f0;
+  margin-top: 3rem;
+  padding-top: 2rem;
+}
+
+.nav-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.prev-post, .next-post {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: #6c757d;
+  text-decoration: none;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.prev-post:hover, .next-post:hover {
+  background: #f8f9fa;
+  color: #3498db;
+}
+
+.next-post {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .post-main {
+    padding: 1rem;
+  }
+
+  .post-article {
+    padding: 2rem 1.5rem;
+  }
+
+  .post-title {
+    font-size: 1.8rem;
+  }
+
+  .post-meta {
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .post-content {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .post-article {
+    padding: 1.5rem 1rem;
+  }
+
+  .post-title {
+    font-size: 1.6rem;
+  }
+
+  .post-meta {
+    flex-direction: column;
+  }
 }

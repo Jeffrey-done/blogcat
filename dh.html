@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> | 肌肉猫🐱</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+  <nav class="post-nav">
+    <a href="/" class="home-link">
+      <i class="fas fa-chevron-left"></i>
+      返回首页
+    </a>
+  </nav>
+
+  <main class="post-main">
+    <article class="post-article">
+      <!-- 文章头部 -->
+      <header class="post-header">
+        <h1 class="post-title"></h1>
+        <div class="post-meta">
+          <div class="meta-item">
+            <i class="fas fa-calendar-day"></i>
+            <time>2025-02-20</time>
+          </div>
+          <div class="meta-item">
+            <i class="fas fa-file-word"></i>
+            <span>1.2k 字</span>
+          </div>
+          
+        </div>
+      </header>
+
+      <!-- 文章内容 -->
+      <div class="post-content">
+        <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蜜糖少女导航站 🍭</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --pink: #FFB6C1;
+            --lavender: #FFF0F5;
+            --rose: #FF69B4;
+            --purple: #D8BFD8;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--lavender), var(--pink));
+            font-family: 'Arial Rounded MT Bold', cursive;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--rose);
+            font-size: 3em;
+            text-shadow: 2px 2px 0px white;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* 搜索框样式 */
+        .search-container {
+            max-width: 600px;
+            margin: 30px auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .sweet-search {
+            display: flex;
+            gap: 10px;
+            position: relative;
+        }
+
+        .unicorn-input {
+            flex: 1;
+            padding: 15px 25px;
+            border: 3px solid var(--pink);
+            border-radius: 30px;
+            font-size: 1.2em;
+            background: rgba(255, 255, 255, 0.9);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 182, 193, 0.3);
+        }
+
+        .unicorn-input:focus {
+            outline: none;
+            border-color: var(--rose);
+            box-shadow: 0 0 20px rgba(255, 105, 180, 0.3);
+            transform: scale(1.02);
+        }
+
+        .unicorn-input::placeholder {
+            color: #FFA1C9;
+            opacity: 0.8;
+        }
+
+        .candy-button {
+            background: linear-gradient(45deg, var(--rose), #FF99CC);
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+        }
+
+        .candy-button:hover {
+            transform: translateY(-3px) rotate(8deg);
+            box-shadow: 0 6px 20px rgba(255, 105, 180, 0.5);
+        }
+
+        .candy-button i {
+            color: white;
+            font-size: 1.5em;
+        }
+
+        .search-tips {
+            text-align: center;
+            color: var(--rose);
+            margin-top: 10px;
+            font-size: 0.9em;
+            opacity: 0.8;
+            animation: twinkle 2s infinite;
+        }
+
+        /* 卡片布局 */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 30px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(255, 105, 180, 0.3);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, var(--pink), transparent);
+            animation: shine 4s infinite;
+        }
+
+        .icon {
+            font-size: 2.5em;
+            color: var(--rose);
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .icon {
+            transform: rotate(15deg);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--rose);
+            font-weight: bold;
+            font-size: 1.2em;
+            display: block;
+            margin: 10px 0;
+        }
+
+        a:hover {
+            color: var(--purple);
+        }
+
+        /* 编辑按钮样式 */
+        .edit-mode-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(45deg, var(--rose), #FF99CC);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .edit-mode-btn:hover {
+            transform: rotate(180deg) scale(1.1);
+            background: linear-gradient(45deg, #FF99CC, var(--rose));
+        }
+
+        .edit-mode-btn i {
+            color: white;
+            font-size: 1.3em;
+        }
+
+        /* 编辑按钮容器 */
+        .edit-controls {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            display: none;
+        }
+
+        .edit-controls.active {
+            display: flex;
+        }
+
+        /* 编辑按钮样式 */
+        .edit-control-btn {
+            background: linear-gradient(45deg, var(--rose), #FF99CC);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+        }
+
+        .edit-control-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 105, 180, 0.5);
+        }
+
+        .edit-control-btn.cancel {
+            background: linear-gradient(45deg, #D8BFD8, #E6E6FA);
+        }
+
+        /* 卡片编辑样式 */
+        .card-edit-mode {
+            position: relative;
+        }
+
+        .card-edit-mode input, .card-edit-mode textarea {
+            position: relative;
+            width: 100%;
+            padding: 8px;
+            border: 2px solid var(--pink);
+            border-radius: 10px;
+            margin: 5px 0;
+        }
+
+        /* 动画效果 */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-50%) rotate(45deg); }
+            100% { transform: translateX(150%) rotate(45deg); }
+        }
+
+        @keyframes fa-beat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        .fa-beat {
+            animation: fa-beat 1.5s ease infinite;
+        }
+
+        /* 装饰元素 */
+        .deco-cloud {
+            position: fixed;
+            opacity: 0.3;
+            animation: cloud 20s linear infinite;
+        }
+
+        @keyframes cloud {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(100vw); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 编辑按钮 -->
+        <div class="edit-controls">
+            <button class="edit-control-btn" onclick="saveChanges()">保存修改</button>
+            <button class="edit-control-btn cancel" onclick="toggleEditMode()">取消</button>
+        </div>
+
+        <button class="edit-mode-btn" onclick="toggleEditMode()">
+            <i class="fas fa-magic"></i>
+        </button>
+
+        <h1>🍬 蜜糖少女导航站 🌸</h1>
+        
+        <!-- 谷歌搜索框 -->
+        <div class="search-container">
+            <form action="https://www.google.com/search" method="GET" target="_blank" class="sweet-search">
+                <input type="text" 
+                       name="q" 
+                       placeholder="🦄 输入魔法咒语..." 
+                       class="unicorn-input"
+                       autocomplete="off">
+                <button type="submit" class="candy-button">
+                    <i class="fas fa-search fa-beat"></i>
+                </button>
+            </form>
+            <div class="search-tips">✨ 试试「猫咪表情包」或「草莓蛋糕食谱」</div>
+        </div>
+
+        <!-- 导航卡片 -->
+        <div class="grid">
+            <div class="card">
+                <i class="icon fas fa-heart"></i>
+                <h2>社交花园</h2>
+                <a href="#">📷 Instagram</a>
+                <a href="#">🦋 小红书</a>
+                <a href="#">💌 微博</a>
+            </div>
+
+            <div class="card">
+                <i class="icon fas fa-star"></i>
+                <h2>学习乐园</h2>
+                <a href="#">📚 在线课程</a>
+                <a href="#">✏️ 学习笔记</a>
+                <a href="#">🎨 创意工坊</a>
+            </div>
+
+            <div class="card">
+                <i class="icon fas fa-cookie"></i>
+                <h2>甜蜜时光</h2>
+                <a href="#">🍿 追剧频道</a>
+                <a href="#">🎵 音乐小屋</a>
+                <a href="#">🛍️ 购物街</a>
+            </div>
+
+            <div class="card">
+                <i class="icon fas fa-cloud"></i>
+                <h2>实用工具</h2>
+                <a href="#">📅 日程管理</a>
+                <a href="#">🌈 天气预告</a>
+                <a href="#">💡 生活小贴士</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 装饰云朵 -->
+    <div class="deco-cloud" style="top:20%; left:-10%; font-size:5em;">☁️</div>
+    <div class="deco-cloud" style="top:60%; left:-20%; font-size:3em; animation-delay:-5s">☁️</div>
+
+    <script>
+        // 本地存储功能
+        let isEditMode = false;
+        let originalData = [];
+
+        // 初始化加载数据
+        function loadData() {
+            const savedData = localStorage.getItem('navData');
+            originalData = savedData ? JSON.parse(savedData) : Array.from(document.querySelectorAll('.card')).map(card => ({
+                title: card.querySelector('h2').innerText,
+                icon: card.querySelector('.icon').className,
+                links: Array.from(card.querySelectorAll('a')).map(link => ({
+                    text: link.innerText,
+                    url: link.href
+                }))
+            }));
+            renderCards();
+        }
+
+        // 渲染卡片
+        function renderCards() {
+            const grid = document.querySelector('.grid');
+            grid.innerHTML = originalData.map((card, index) => `
+                <div class="card">
+                    <i class="icon ${card.icon}"></i>
+                    <h2>${card.title}</h2>
+                    ${card.links.map(link => `
+                        <a href="${link.url}">${link.text}</a>
+                    `).join('')}
+                </div>
+            `).join('');
+        }
+
+        // 切换编辑模式
+        function toggleEditMode() {
+            isEditMode = !isEditMode;
+            const editControls = document.querySelector('.edit-controls');
+            editControls.classList.toggle('active');
+
+            if (isEditMode) {
+                enterEditMode();
+            } else {
+                exitEditMode();
+            }
+        }
+
+        // 进入编辑模式
+        function enterEditMode() {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                const title = card.querySelector('h2');
+                const links = card.querySelectorAll('a');
+
+                // 创建输入框
+                const titleInput = document.createElement('input');
+                titleInput.type = 'text';
+                titleInput.value = title.innerText;
+                titleInput.onchange = (e) => {
+                    originalData[index].title = e.target.value;
+                };
+
+                // 替换标题
+                title.replaceWith(titleInput);
+
+                // 创建链接输入框
+                links.forEach((link, linkIndex) => {
+                    const linkInput = document.createElement('input');
+                    linkInput.type = 'text';
+                    linkInput.value = link.innerText;
+                    linkInput.onchange = (e) => {
+                        originalData[index].links[linkIndex].text = e.target.value;
+                    };
+
+                    const urlInput = document.createElement('input');
+                    urlInput.type = 'text';
+                    urlInput.value = link.href;
+                    urlInput.onchange = (e) => {
+                        originalData[index].links[linkIndex].url = e.target.value;
+                    };
+
+                    link.replaceWith(linkInput);
+                    linkInput.after(urlInput);
+                });
+            });
+        }
+
+        // 退出编辑模式
+        function exitEditMode() {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                const titleInput = card.querySelector('input:nth-child(2)');
+                const title = titleInput.value;
+                
+                const links = card.querySelectorAll('input');
+                const linkInputs = Array.from(links).filter((input, idx) => idx % 2 === 0);
+                const urlInputs = Array.from(links).filter((input, idx) => idx % 2 === 1);
+
+                // 还原标题
+                const titleElement = document.createElement('h2');
+                titleElement.innerText = title;
+                titleInput.replaceWith(titleElement);
+
+                // 还原链接
+                linkInputs.forEach((linkInput, linkIndex) => {
+                    const linkElement = document.createElement('a');
+                    linkElement.href = urlInputs[linkIndex].value;
+                    linkElement.innerText = linkInput.value;
+                    linkElement.replaceWith(linkInput);
+                    linkInput.replaceWith(linkElement);
+                    urlInputs[linkIndex].replaceWith(null);
+                });
+            });
+
+            saveChanges();
+        }
+
+        // 保存修改
+        function saveChanges() {
+            localStorage.setItem('navData', JSON.stringify(originalData));
+            renderCards();
+        }
+
+        // 初始化加载
+        loadData();
+    </script>
+</body>
+</html>
+
+      </div>
+
+      <!-- 底部导航 -->
+      <footer class="post-footer">
+        <div class="nav-links">
+          
+          
+          
+        </div>
+      </footer>
+    </article>
+  </main>
+</body>
+</html>

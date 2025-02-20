@@ -1,71 +1,120 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>肌肉猫🐱</title>
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <meta name="generator" content="Hexo 7.3.0"></head>
 <body>
-  <header class="author-info">
-    <img src="/img/avatar.png" alt="头像" class="avatar">
-    <div class="author-details">
-      <h1>复方猫头</h1>
-      <p>无话可说</p>
+  <header class="author-header">
+    <div class="author-card">
+      <img src="/img/avatar.png" alt="作者头像" class="author-avatar">
+      <div class="author-info">
+        <h1>人间凑数选手</h1>
+        <div class="random-quote">
+          <div id="dynamic-quote">
+            <div class="loading-dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <button class="refresh-btn" onclick="refreshQuote()">
+            <i class="fas fa-redo"></i>
+          </button>
+        </div>
+      </div>
     </div>
   </header>
 
-  <main class="post-list">
+  <main class="post-container">
     
-      <article class="post-item">
-        <h2><a href="/2025/02/20/2025-02-20-%E6%B5%8B%E8%AF%95%E5%90%8E%E5%8F%B0/">测试后台</a></h2>
+      <article class="post-card">
+        <h2 class="post-title">
+          <a href="/2025/02/20/2025-02-20-%E6%B5%8B%E8%AF%95%E5%90%8E%E5%8F%B0/">测试后台</a>
+        </h2>
         <div class="post-meta">
           <time>2025-02-20</time>
-        </div>
-        <div class="post-excerpt">
           
         </div>
+        
       </article>
     
-      <article class="post-item">
-        <h2><a href="/2024/11/25/%E5%90%88%E9%9B%86/">合集</a></h2>
+      <article class="post-card">
+        <h2 class="post-title">
+          <a href="/2024/11/25/%E5%90%88%E9%9B%86/">合集</a>
+        </h2>
         <div class="post-meta">
           <time>2024-11-25</time>
-        </div>
-        <div class="post-excerpt">
+          
+            <span>·</span>
+            
+              <a href="/tags/%E9%82%AE%E7%AE%B1/" class="tag">#邮箱</a>
+            
           
         </div>
+        
       </article>
     
-      <article class="post-item">
-        <h2><a href="/2024/11/24/%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%E5%92%8C%E9%83%A8%E7%BD%B2/">自动更新和部署</a></h2>
+      <article class="post-card">
+        <h2 class="post-title">
+          <a href="/2024/11/24/%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%E5%92%8C%E9%83%A8%E7%BD%B2/">自动更新和部署</a>
+        </h2>
         <div class="post-meta">
           <time>2024-11-24</time>
-        </div>
-        <div class="post-excerpt">
+          
+            <span>·</span>
+            
+              <a href="/tags/%E8%87%AA%E7%BC%96%E6%96%87%E4%BB%B6/" class="tag">#自编文件</a>
+            
           
         </div>
+        
       </article>
     
-      <article class="post-item">
-        <h2><a href="/2024/11/23/%E6%B5%8B%E8%AF%95%E5%86%99%E4%BD%9C/">测试写作</a></h2>
+      <article class="post-card">
+        <h2 class="post-title">
+          <a href="/2024/11/23/%E6%B5%8B%E8%AF%95%E5%86%99%E4%BD%9C/">测试写作</a>
+        </h2>
         <div class="post-meta">
           <time>2024-11-23</time>
-        </div>
-        <div class="post-excerpt">
+          
+            <span>·</span>
+            
+              <a href="/tags/%E6%B5%8B%E8%AF%95/" class="tag">#测试</a>
+            
           
         </div>
+        
       </article>
     
-      <article class="post-item">
-        <h2><a href="/2024/11/23/hello-world/">Hello World</a></h2>
+      <article class="post-card">
+        <h2 class="post-title">
+          <a href="/2024/11/23/hello-world/">Hello World</a>
+        </h2>
         <div class="post-meta">
           <time>2024-11-23</time>
-        </div>
-        <div class="post-excerpt">
           
         </div>
+        
       </article>
     
   </main>
+
+  <script src="/js/random-quote.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      fetchQuote();
+      
+      // 添加键盘快捷键支持 (Shift+R 刷新)
+      document.addEventListener('keydown', (e) => {
+        if (e.shiftKey && e.key === 'R') {
+          refreshQuote();
+        }
+      });
+    });
+  </script>
 </body>
 </html>
