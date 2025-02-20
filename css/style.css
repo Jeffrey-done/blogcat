@@ -1,0 +1,71 @@
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #95a5a6;
+}
+
+body {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+}
+
+/* 作者信息 */
+.author-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #eee;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 2rem;
+  object-fit: cover;
+}
+
+.author-details h1 {
+  margin: 0 0 0.5rem;
+  color: var(--primary-color);
+}
+
+.author-details p {
+  margin: 0;
+  color: var(--secondary-color);
+}
+
+/* 文章列表 */
+.post-item {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.post-item h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.4rem;
+}
+
+.post-item h2 a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.post-item h2 a:hover {
+  text-decoration: underline;
+}
+
+.post-meta {
+  color: var(--secondary-color);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.post-excerpt {
+  color: #666;
+}
