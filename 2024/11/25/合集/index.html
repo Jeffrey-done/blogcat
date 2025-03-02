@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>合集 | 肌肉猫🐱</title>
+  <title><%= page.title %> | <%= config.title %></title>
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <script src="/js/theme.js"></script>
-  
+  <% if (theme.busuanzi && theme.busuanzi.enable) { %>
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-  
+  <% } %>
 <meta name="generator" content="Hexo 7.3.0"></head>
 <body>
   <nav class="post-nav">
@@ -23,95 +23,41 @@
     <article class="post-article">
       <!-- 文章头部 -->
       <header class="post-header">
-        <h1 class="post-title">合集</h1>
+        <h1 class="post-title"><%= page.title %></h1>
         <div class="post-meta">
           <div class="meta-item">
             <i class="fas fa-calendar-day"></i>
-            <time>2024-11-25</time>
+            <time><%= date(page.date, 'YYYY-MM-DD') %></time>
           </div>
           <div class="meta-item">
             <i class="fas fa-file-word"></i>
-            <span>331 字</span>
+            <span><%= wordcount(page.content) %> 字</span>
           </div>
-          
+          <% if(page.tags && page.tags.length){ %>
             <div class="meta-item tags">
               <i class="fas fa-tags"></i>
-              
-                <a href="/tags/%E9%82%AE%E7%AE%B1/" class="tag">邮箱</a>
-              
+              <% page.tags.forEach(function(tag){ %>
+                <a href="<%= url_for(tag.path) %>" class="tag"><%= tag.name %></a>
+              <% }); %>
             </div>
-          
+          <% } %>
         </div>
       </header>
 
-      
+      <% if (theme.toc && theme.toc.enable) { %>
       <!-- 文章目录 -->
       <aside class="post-toc">
         <div class="toc-title">目录</div>
-        
+        <%- toc(page.content, {list_number: theme.toc.number}) %>
       </aside>
-      
+      <% } %>
 
       <!-- 文章内容 -->
       <div class="post-content">
-        <p>临时邮箱主要用来注册一些不确定是否安全的网站、论坛、博客等，可以起到保护用户隐私和避免垃圾邮件骚扰的作用。包括 gmail 后缀的谷歌邮箱以及 edu 后缀的教育邮箱</p>
-<ol>
-<li>mail.tm</li>
-</ol>
-<p>一个临时邮箱账号可以反复使用，只有当你点击右上角的退出按钮时才会更换账号</p>
-<p><a target="_blank" rel="noopener" href="https://mail.tm/zh/">https://mail.tm/zh/</a></p>
-<ol start="2">
-<li>YOPMAIL</li>
-</ol>
-<p>支持自定义邮箱地址，多种邮箱后缀</p>
-<p><a target="_blank" rel="noopener" href="https://yopmail.com/zh/">https://yopmail.com/zh/</a></p>
-<ol start="3">
-<li>Guerrilla Mail</li>
-</ol>
-<p>支持自定义邮箱地址，多种邮箱后缀</p>
-<p><a target="_blank" rel="noopener" href="https://www.guerrillamail.com/">https://www.guerrillamail.com/</a></p>
-<ol start="4">
-<li>查错 IT 网</li>
-</ol>
-<p>支持自定义邮箱地址，支持两种邮箱后缀</p>
-<p><a target="_blank" rel="noopener" href="http://24mail.chacuo.net/">http://24mail.chacuo.net/</a></p>
-<ol start="5">
-<li>Temp mail</li>
-</ol>
-<p>支持安卓和 iOS 客户端</p>
-<p><a target="_blank" rel="noopener" href="https://temp-mail.org/zh/">https://temp-mail.org/zh/</a></p>
-<ol start="6">
-<li>DuckDuckGo 邮箱保护</li>
-</ol>
-<p>DuckDuckGo 提供的邮箱保护服务，可以当作临时邮箱使用（需要安装 DuckDuckGo 浏览器插件）</p>
-<p><a target="_blank" rel="noopener" href="https://duckduckgo.com/email/">https://duckduckgo.com/email/</a></p>
-<ol start="7">
-<li>Temp Gmail</li>
-</ol>
-<p>gmail 后缀的临时邮箱，同时还提供在线接码平台、临时信用卡生成以及用户名生成等服务</p>
-<p><a target="_blank" rel="noopener" href="https://smailpro.com/advanced/">https://smailpro.com/advanced/</a></p>
-<ol start="8">
-<li>Gmailnator</li>
-</ol>
-<p>gmail 后缀的临时邮箱，支持安卓和 iOS 客户端</p>
-<p><a target="_blank" rel="noopener" href="https://www.emailnator.com/">https://www.emailnator.com/</a></p>
-<ol start="9">
-<li>eTempMail</li>
-</ol>
-<p>免费教育邮箱，可以将 Edu 或 .com 临时邮件与 eTempMail 一起使用</p>
-<p><a target="_blank" rel="noopener" href="https://etempmail.com/">https://etempmail.com/</a></p>
-<ol start="10">
-<li>xiuvi</li>
-</ol>
-<p><a target="_blank" rel="noopener" href="https://mail.xiuvi.cn/">https://mail.xiuvi.cn/</a></p>
-<ol start="11">
-<li>EduMail</li>
-</ol>
-<p><a target="_blank" rel="noopener" href="https://edumail.icu/mailbox/">https://edumail.icu/mailbox/</a></p>
-
+        <%- page.content %>
       </div>
 
-      
+      <% if (theme.busuanzi && theme.busuanzi.enable) { %>
       <!-- 访问统计 -->
       <div class="post-stats">
         <span id="busuanzi_container_page_pv">
@@ -119,30 +65,30 @@
           阅读量 <span id="busuanzi_value_page_pv"></span>
         </span>
       </div>
-      
+      <% } %>
 
       <!-- 底部导航 -->
       <footer class="post-footer">
         <div class="nav-links">
-          
-            <a href="/2025/02/20/2025-02-20-%E6%B5%8B%E8%AF%95%E5%90%8E%E5%8F%B0/" class="prev-post">
+          <% if(page.prev){ %>
+            <a href="<%= url_for(page.prev.path) %>" class="prev-post">
               <i class="fas fa-arrow-left"></i>
-              测试后台
+              <%= page.prev.title %>
             </a>
+          <% } %>
           
-          
-          
-            <a href="/2024/11/24/%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%E5%92%8C%E9%83%A8%E7%BD%B2/" class="next-post">
-              自动更新和部署
+          <% if(page.next){ %>
+            <a href="<%= url_for(page.next.path) %>" class="next-post">
+              <%= page.next.title %>
               <i class="fas fa-arrow-right"></i>
             </a>
-          
+          <% } %>
         </div>
       </footer>
     </article>
 
     <!-- 评论系统 -->
-    
+    <%- partial('comment') %>
   </main>
 </body>
 </html>
