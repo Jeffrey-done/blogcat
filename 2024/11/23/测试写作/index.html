@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= page.title %> | <%= config.title %></title>
+  <title>测试写作 | 肌肉猫🐱</title>
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <script src="/js/theme.js"></script>
-  <% if (theme.busuanzi && theme.busuanzi.enable) { %>
+  
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-  <% } %>
+  
 <meta name="generator" content="Hexo 7.3.0"></head>
 <body>
   <nav class="post-nav">
@@ -23,41 +23,41 @@
     <article class="post-article">
       <!-- 文章头部 -->
       <header class="post-header">
-        <h1 class="post-title"><%= page.title %></h1>
+        <h1 class="post-title">测试写作</h1>
         <div class="post-meta">
           <div class="meta-item">
             <i class="fas fa-calendar-day"></i>
-            <time><%= date(page.date, 'YYYY-MM-DD') %></time>
+            <time>2024-11-23</time>
           </div>
           <div class="meta-item">
             <i class="fas fa-file-word"></i>
-            <span><%= wordcount(page.content) %> 字</span>
+            <span>22 字</span>
           </div>
-          <% if(page.tags && page.tags.length){ %>
+          
             <div class="meta-item tags">
               <i class="fas fa-tags"></i>
-              <% page.tags.forEach(function(tag){ %>
-                <a href="<%= url_for(tag.path) %>" class="tag"><%= tag.name %></a>
-              <% }); %>
+              
+                <a href="/tags/%E6%B5%8B%E8%AF%95/" class="tag">测试</a>
+              
             </div>
-          <% } %>
+          
         </div>
       </header>
 
-      <% if (theme.toc && theme.toc.enable) { %>
+      
       <!-- 文章目录 -->
       <aside class="post-toc">
         <div class="toc-title">目录</div>
-        <%- toc(page.content, {list_number: theme.toc.number}) %>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B%E5%AD%A6%E4%B9%A0%E6%80%8E%E4%B9%88%EF%BC%8C%E4%BB%8E%E8%80%8C%E4%BC%98%E7%A7%80%E8%87%AA%E5%B7%B1%EF%BC%81%EF%BC%81%EF%BC%81"><span class="toc-number">1.</span> <span class="toc-text">开始学习怎么，从而优秀自己！！！</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%83%E9%87%8C%E4%B9%8B%E8%A1%8C%E5%A7%8B%E4%BA%8E%E8%B6%B3%E4%B8%8B%EF%BC%81"><span class="toc-number">1.1.</span> <span class="toc-text">千里之行始于足下！</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A0%E6%B2%B9%EF%BC%81%EF%BC%81%EF%BC%81"><span class="toc-number">1.1.1.</span> <span class="toc-text">加油！！！</span></a></li></ol></li></ol></li></ol>
       </aside>
-      <% } %>
+      
 
       <!-- 文章内容 -->
       <div class="post-content">
-        <%- page.content %>
+        <h2 id="开始学习怎么，从而优秀自己！！！"><a href="#开始学习怎么，从而优秀自己！！！" class="headerlink" title="开始学习怎么，从而优秀自己！！！"></a>开始学习怎么，从而优秀自己！！！</h2><h3 id="千里之行始于足下！"><a href="#千里之行始于足下！" class="headerlink" title="千里之行始于足下！"></a>千里之行始于足下！</h3><h4 id="加油！！！"><a href="#加油！！！" class="headerlink" title="加油！！！"></a>加油！！！</h4>
       </div>
 
-      <% if (theme.busuanzi && theme.busuanzi.enable) { %>
+      
       <!-- 访问统计 -->
       <div class="post-stats">
         <span id="busuanzi_container_page_pv">
@@ -65,30 +65,30 @@
           阅读量 <span id="busuanzi_value_page_pv"></span>
         </span>
       </div>
-      <% } %>
+      
 
       <!-- 底部导航 -->
       <footer class="post-footer">
         <div class="nav-links">
-          <% if(page.prev){ %>
-            <a href="<%= url_for(page.prev.path) %>" class="prev-post">
-              <i class="fas fa-arrow-left"></i>
-              <%= page.prev.title %>
-            </a>
-          <% } %>
           
-          <% if(page.next){ %>
-            <a href="<%= url_for(page.next.path) %>" class="next-post">
-              <%= page.next.title %>
+            <a href="/2024/11/24/%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%E5%92%8C%E9%83%A8%E7%BD%B2/" class="prev-post">
+              <i class="fas fa-arrow-left"></i>
+              自动更新和部署
+            </a>
+          
+          
+          
+            <a href="/2024/11/23/hello-world/" class="next-post">
+              Hello World
               <i class="fas fa-arrow-right"></i>
             </a>
-          <% } %>
+          
         </div>
       </footer>
     </article>
 
     <!-- 评论系统 -->
-    <%- partial('comment') %>
+    
   </main>
 </body>
 </html>
